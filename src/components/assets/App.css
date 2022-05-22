@@ -11,6 +11,7 @@
   text-decoration: none;
   font-family: 'Lato', sans-serif;
   color: #f2f2f1;
+  letter-spacing: 0.05rem;
 }
 
 ol,
@@ -21,4 +22,8 @@ li {
 
 body {
   background-color: #4369b2;
+}
+
+#root {
+  margin-bottom: 100px;
 }
