@@ -9,9 +9,6 @@ export default function Header() {
         <span><img src="favicon.png" alt="logo" /></span>
         tocks
       </h1>
-      <div className="search">
-        <input type="text" value="" placeholder="search" />
-      </div>
     </header>
   );
 }
