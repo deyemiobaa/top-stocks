@@ -1,7 +1,9 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getStocks } from '../../redux/stocks/stocksSlice';
+import Header from '../features/header';
 import Stock from '../features/stock';
+import Loading from '../features/loading';
 import '../assets/stocks.css';
 
 export default function Stocks() {
@@ -15,23 +17,36 @@ export default function Stocks() {
   }, []);
 
   if (loading) {
-    return <p>Spinner</p>;
+    return (
+      <>
+        <Header />
+        <Loading />
+      </>
+    );
   }
 
   if (rejected) {
-    return <p>Rejected</p>;
+    return (
+      <>
+        <Header />
+        <p>Rejected</p>
+      </>
+    );
   }
   return (
-    <ul className="stock-data-body">
-      {data.map((stocks) => (
-        <Stock
-          key={stocks.ticker}
-          name={stocks.companyName}
-          ticker={stocks.ticker}
-          price={stocks.price}
-          change={stocks.changesPercentage}
-        />
-      ))}
-    </ul>
+    <>
+      <Header />
+      <ul className="stock-data-body">
+        {data.map((stocks) => (
+          <Stock
+            key={stocks.ticker}
+            name={stocks.companyName}
+            ticker={stocks.ticker}
+            price={stocks.price}
+            change={stocks.changesPercentage}
+          />
+        ))}
+      </ul>
+    </>
   );
 }

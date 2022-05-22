@@ -1,7 +1,7 @@
 :root {
   --text: #f2f2f1;
   --main: #2d4573;
-  --red: #80030b;
+  --red: #c60512;
   --green: #6ac66b;
 }
 
@@ -9,12 +9,11 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(calc(100% / 3), 1fr));
   margin: 0 auto;
-  justify-items: center;
 }
 
 .stock-data {
   width: 100%;
-  height: 250px;
+  height: 300px;
   background-color: var(--main);
   padding: 20px;
   display: grid;
@@ -28,6 +27,10 @@
   column-gap: 20px;
   justify-content: space-between;
   flex-wrap: wrap;
+}
+
+.top {
+  flex-direction: column;
 }
 
 .bottom {
@@ -99,10 +102,10 @@
     width: 85%;
   }
 
-  .stock-data:hover {
-    border: 2px solid var(--text);
+  .stock-data {
+    height: 270px;
   }
-  
+
   .text {
     font-size: 1.3rem;
   }
