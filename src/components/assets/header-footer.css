@@ -15,7 +15,7 @@ h1 {
 
 h1::after {
   content: 'TM';
-  font-size: .6rem;
+  font-size: 0.6rem;
 }
 
 span {
