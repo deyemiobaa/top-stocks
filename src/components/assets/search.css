@@ -1,0 +1,12 @@
+#search {
+  border-radius: 16.5px;
+  border: solid 1px #141c3a;
+  background-color: #fff;
+  outline: none;
+}
+
+#search::placeholder {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #2d4573;
+}

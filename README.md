@@ -1,46 +1,57 @@
-# Getting Started with Create React App and Redux
+# top Stocks App
+> A web application that provides you with the data about the most active trading stocks for the day.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
+### Built With
+##### REACT.JS, REDUX.JS, CSS, TAILWIND-CSS
 
-## Available Scripts
+![image](https://user-images.githubusercontent.com/55185309/169798193-a19f93bf-b494-4125-a7eb-0e3ad7836491.png)
 
-In the project directory, you can run:
+##### [Video Presentation](https://www.loom.com/share/24fec4b949484abb987a26df5e860f61)
 
-### `npm start`
+##### [Live Version](https://top-stocks.vercel.app/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- A code editor (preferably VSCode)
+- A browser
+- Node.js (to run javascript files locally)
+- LiveServer extension (to load javascript modules from localhost)
 
-### `npm test`
+### Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To get a local copy up and running follow these simple example steps.
+- Open git bash on local computer
+- clone the repo with: 
+```
+git clone  <https://github.com/deyemiobaa/top-stocks.git>
+```
+- run ```cd top-stocks``` to enter the project folder
+- run ```npm i``` to install all dependencies
+- run ```npm start``` to launch the application
+- run ```npm test``` to run the tests
 
-### `npm run build`
+### Authors
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+👤 **Sodiq**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- GitHub: [@deyemiobaa](https://github.com/deyemiobaa)
+- Twitter: [@deyemiobaa](https://twitter.com/deyemiobaa)
+- LinkedIn: [Sodiq Aderibigbe](https://linkedin.com/in/sodiqa)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 🤝 Contributing
 
-### `npm run eject`
+Contributions, issues, and feature requests are welcome!
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Feel free to check the [issues page](https://github.com/deyemiobaa/top-stocks/issues).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Acknoledgements
+- Original design idea by [Nelson Sakwa on Behance.](https://www.behance.net/sakwadesignstudio)
+- Data from [FMP](https://site.financialmodelingprep.com/developer/docs/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Show your support
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Give a ⭐️ if you like this project!
 
-## Learn More
+### 📝 License
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project is [MIT](LICENSE) licensed.
