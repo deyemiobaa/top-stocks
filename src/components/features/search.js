@@ -1,8 +1,7 @@
 import React from 'react';
-import ClearIcon from '@mui/icons-material/Clear';
-import SearchIcon from '@mui/icons-material/Search';
 import { useDispatch, useSelector } from 'react-redux';
-import { setSearchTerm, clearSearchTerm, selectSearchTerm } from '../../redux/stocks/searchSlice';
+import { setSearchTerm, selectSearchTerm } from '../../redux/stocks/searchSlice';
+import '../assets/search.css';
 
 export default function Search() {
   const dispatch = useDispatch();
@@ -13,29 +12,16 @@ export default function Search() {
     dispatch(setSearchTerm(value));
   };
 
-  const onSearchTermClearHandler = () => {
-    dispatch(clearSearchTerm());
-  };
-
   return (
-    <div id="search-container">
-      <SearchIcon />
+    <div id="search-container" className="mx-auto flex items-center">
       <input
+        className="w-5/6 mx-auto my-8 h-10 p-4 text-xl text text-mainblue sm:w-3/5"
         id="search"
         type="text"
         value={searchTerm}
         onChange={onSearchChangeHandler}
-        placeholder="Search recipes"
+        placeholder="Search"
       />
-      {searchTerm.length > 0 && (
-        <button
-          onClick={onSearchTermClearHandler}
-          type="button"
-          id="search-clear-button"
-        >
-          <ClearIcon />
-        </button>
-      )}
     </div>
   );
 }

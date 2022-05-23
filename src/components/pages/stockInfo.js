@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getCompanyDetails } from '../../redux/stocks/stocksInfoSlice';
 import Loading from '../features/loading';
+import Rejected from '../features/rejected';
 
 export default function CompanyInfo() {
   const dispatch = useDispatch();
@@ -20,17 +21,13 @@ export default function CompanyInfo() {
   }
 
   if (rejected) {
-    return (
-      <Link to="/">
-        <button type="button" className="my-14 px-4 py-2 font-semibold text-xl bg-white text-slate-700 border border-slate-300 rounded-md shadow-sm ring-2 ring-offset-2 ring-offset-slate-50 ring-blue-500 dark:ring-offset-slate-900 dark:bg-slate-700 dark:text-slate-200 dark:border-transparent">Back to home</button>
-      </Link>
-    );
+    return <Rejected />;
   }
 
   return (
     <>
       <Link to="/">
-        <button type="button" className="my-14 px-4 py-2 font-semibold text-xl bg-white text-slate-700 border border-slate-300 rounded-md shadow-sm ring-2 ring-offset-2 ring-offset-slate-50 ring-blue-500 dark:ring-offset-slate-900 dark:bg-slate-700 dark:text-slate-200 dark:border-transparent">Back to home</button>
+        <button type="button" className="m-14 px-4 py-2 font-semibold text-xl bg-slate-700 text-slate-200 border border-transparent border-slate-300 rounded-md shadow-sm ring-2 ring-offset-2 ring-offset-slate-900 ring-blue-500">Back to home</button>
       </Link>
       {data.map((company) => (
         <div className="bg-mainblue w-full mx-auto p-4 sm:w-4/5 shadow overflow-hidden sm:rounded-lg" key={company.symbol}>
@@ -58,7 +55,11 @@ export default function CompanyInfo() {
               </div>
               <div className="bg-lightblue px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-xl font-bold text-textcolor">Market Cap</dt>
-                <dd className="mt-1 text-xl text-textcolor sm:mt-0 sm:col-span-2">{company.mktCap}</dd>
+                <dd className="mt-1 text-xl text-textcolor sm:mt-0 sm:col-span-2">
+                  {Number(parseFloat(company.mktCap).toFixed(2)).toLocaleString('en', {
+                    minimumFractionDigits: 2,
+                  })}
+                </dd>
               </div>
               <div className="bg-mainblue px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-xl font-bold text-textcolor">CEO</dt>
@@ -76,8 +77,8 @@ export default function CompanyInfo() {
               </div>
               <div className="bg-lightblue px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                 <dt className="text-xl font-bold text-textcolor">Website</dt>
-                <dd className="mt-1 text-xl text-textcolor sm:mt-0 sm:col-span-2">
-                  {company.website}
+                <dd className="mt-1 text-xl text-textcolor hover:underline sm:mt-0 sm:col-span-2">
+                  <a href={company.website}>{company.website}</a>
                 </dd>
               </div>
               <div className="bg-mainblue px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">

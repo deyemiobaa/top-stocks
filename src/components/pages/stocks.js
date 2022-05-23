@@ -4,6 +4,7 @@ import Header from '../features/header';
 import Stock from '../features/stock';
 import Search from '../features/search';
 import Loading from '../features/loading';
+import Rejected from '../features/rejected';
 import { selectFilteredStocks } from '../../redux/stocks/stocksSlice';
 import '../assets/stocks.css';
 
@@ -25,7 +26,7 @@ export default function Stocks() {
     return (
       <>
         <Header />
-        <p>Rejected</p>
+        <Rejected />
       </>
     );
   }
