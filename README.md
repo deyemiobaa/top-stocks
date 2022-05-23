@@ -4,6 +4,8 @@
 ### Built With
 ##### REACT.JS, REDUX.JS, CSS, TAILWIND-CSS
 
+![image](https://user-images.githubusercontent.com/55185309/169798193-a19f93bf-b494-4125-a7eb-0e3ad7836491.png)
+
 ##### [Video Presentation](https://www.loom.com/share/24fec4b949484abb987a26df5e860f61)
 
 ##### [Live Version](https://top-stocks.vercel.app/)
