@@ -1,4 +1,5 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { selectSearchTerm } from './searchSlice';
 
 const baseURL = 'https://financialmodelingprep.com/api/v3/actives?apikey=35de2c47f94378e1c19ffc243e30900c';
 
@@ -46,5 +47,15 @@ export const stocksSlice = createSlice({
     },
   },
 });
+
+export const selectStocksData = (state) => state.stocksData.data;
+
+export const selectFilteredStocks = (state) => {
+  const allStocks = selectStocksData(state);
+  const searchTerm = selectSearchTerm(state);
+
+  return allStocks.filter((stock) => stock.companyName.toLowerCase()
+    .includes(searchTerm.toLowerCase()));
+};
 
 export default stocksSlice.reducer;

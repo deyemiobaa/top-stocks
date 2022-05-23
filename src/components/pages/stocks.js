@@ -1,20 +1,17 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getStocks } from '../../redux/stocks/stocksSlice';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import Header from '../features/header';
 import Stock from '../features/stock';
+import Search from '../features/search';
 import Loading from '../features/loading';
+import Rejected from '../features/rejected';
+import { selectFilteredStocks } from '../../redux/stocks/stocksSlice';
 import '../assets/stocks.css';
 
 export default function Stocks() {
   const { loading } = useSelector((state) => state.stocksData);
   const { rejected } = useSelector((state) => state.stocksData);
-  const { data } = useSelector((state) => state.stocksData);
-
-  const dispatch = useDispatch();
-  useEffect(() => {
-    dispatch(getStocks());
-  }, []);
+  const data = useSelector(selectFilteredStocks);
 
   if (loading) {
     return (
@@ -29,14 +26,15 @@ export default function Stocks() {
     return (
       <>
         <Header />
-        <p>Rejected</p>
+        <Rejected />
       </>
     );
   }
   return (
     <>
       <Header />
-      <ul className="stock-data-body">
+      <Search />
+      <ul className="stock-data-body transition-all duration-500">
         {data.map((stocks) => (
           <Stock
             key={stocks.ticker}

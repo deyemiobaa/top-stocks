@@ -1,17 +1,15 @@
 import React from 'react';
 import '../assets/header-footer.css';
+import icon from '../assets/favicon.ico';
 
 export default function Header() {
   return (
     <header>
-      <h1>
+      <h1 className="text-4xl">
         Top
-        <span><img src="favicon.png" alt="logo" /></span>
+        <span><img src={icon} alt="logo" /></span>
         tocks
       </h1>
-      <div className="search">
-        <input type="text" value="" placeholder="search" />
-      </div>
     </header>
   );
 }
